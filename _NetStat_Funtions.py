@@ -4,36 +4,36 @@ import json
 import os
 import psutil
 
-import Variables
+import _Variables
 
+# call funtion Update_all with the frame window_Netstat and the actual theme
 def update_periodically(tree, frame, theme, label1):
-    # Llama a Update_all con el frame y el tema actual
     gather_network_data()
     update_treeview(tree)
 
-    # Contar puertos abiertos (suponiendo que `Variables.open_ports` se actualiza en `update_treeview`)
+    # count open port ans update var Variables.open_port
     count_open_ports = sum(1 for item in tree.get_children() if tree.item(item, 'values')[5] in ["LSN", "EST"])
-    Variables.open_ports = count_open_ports
+    _Variables.open_ports = count_open_ports
     
-    # Actualizar texto en la etiqueta
-    label1.config(text=f"Open Ports: {Variables.open_ports}")
+    # update label text
+    label1.config(text=f"Open Ports: {_Variables.open_ports}")
     
-    # Programa la próxima ejecución, cada 10000 son 10 segundos
+    # set the new update every 10 seconds
     frame.after(10000, update_periodically, tree, frame, theme, label1)
 
 #TREEVIEW#
 def column_row_click(event, theme):
-    # Obtener la columna que fue clickeada
+    # Get the column that was clicked
     column_id = tree.identify_column(event.x)
-    # Obtener la fila que fue clickeada
+    # Get the row that was clicked
     row_id = tree.identify_row(event.y)
     
-    # Verificar si la columna clickeada es "Status" (identificador de columna #6)
-    if column_id == "#6" and not row_id:  # Asegurarse de que no es una fila
-        # Obtener el texto de la columna clickeada
+    # Check if the clicked column is "Status" (column identifier #6)
+    if column_id == "#6" and not row_id:  # Make sure it is not a row
+        # Get the text of the clicked column
         column_text = tree.heading(column_id)["text"]
         
-        # Mostrar un recuadro con el texto solo para la columna "Status"
+        # Show a box with text only for the "Status" column
         text = (
         "ESTABLISHED: EST\n"
         "LISTEN: LSN\n"
@@ -51,39 +51,39 @@ def column_row_click(event, theme):
         show_tooltip(event.x_root, event.y_root, text, theme)
 
 def show_tooltip(x, y, text, theme):
-    # Crear una ventana Toplevel como tooltip
+    # Create a Toplevel window as a tooltip
     tooltip = tk.Toplevel(tree)
-    tooltip.wm_overrideredirect(True)  # Eliminar bordes de la ventana
-    tooltip.geometry(f"+{x}+{y}")  # Posicionar el tooltip
+    tooltip.wm_overrideredirect(True)  # Remove window borders
+    tooltip.geometry(f"+{x}+{y}")  # Position the tooltip
 
-    # Añadir un Label con el texto
+    # Add a Label with the text
     label = tk.Label(
         tooltip, 
         text=text, 
         bg=theme["bg_color"],
-        fg=theme["fg_color"],  # Texto del tooltip
+        fg=theme["fg_color"],  # Tooltip text
         relief="solid", 
         borderwidth=1
     )
     label.pack()
 
     tooltip.update_idletasks()
-    # Destruir el tooltip después de un tiempo
+    # destroy tooltip after a while
     tooltip.after(2000, tooltip.destroy)
 
 def show_context_menu(event, theme):
-    # Obtener el ítem seleccionado
+    # get selected item
     item = tree.identify_row(event.y)
     
     if item:
-        # Mostrar el menú contextual en la posición del cursor
+        # show the context menu in the mouse position
         context_menu.post(event.x_root, event.y_root)
 
 def crear_treeview(parent, theme):
     global tree
     tree = ttk.Treeview(parent, columns=("col1", "col2", "col3", "col4", "col5", "col6"), show="headings")
 
-    # Definir encabezados de columnas
+    # define the colums header
     tree.heading("col1", text="PORT")
     tree.heading("col2", text="PID")
     tree.heading("col3", text="LAND")
@@ -91,7 +91,7 @@ def crear_treeview(parent, theme):
     tree.heading("col5", text="SERVICE")
     tree.heading("col6", text="STATUS")
 
-    # Definir el ancho de las columnas y deshabilitar el redimensionamiento
+    # Set column widths and disable resizing
     column_widths = {
         "col1": 50,
         "col2": 60,
@@ -104,21 +104,22 @@ def crear_treeview(parent, theme):
     for col, width in column_widths.items():
         tree.column(col, width=width, anchor="center", stretch=False)
 
-    # Crear el menú contextual
+    # create a contextual menu
     global context_menu
     context_menu = tk.Menu(tree, tearoff=0)
-    context_menu.add_command(label="Opción 1")
-    context_menu.add_command(label="Opción 2")
+    context_menu.add_command(label="Opción 1", bg=theme["bg_color"], fg=theme["fg_color"])
+    context_menu.add_command(label="Opción 2", bg=theme["bg_color"], fg=theme["fg_color"])
+    
 
-    # Añadir el Treeview al contenedor
+    # add treeview to the container
     tree.pack(expand=True, fill="both")
 
-    # Crear un scrollbar vertical
+    # create a vertical scrollbar
     scrollbar = ttk.Scrollbar(tree, orient="vertical", command=tree.yview)
     tree.configure(yscroll=scrollbar.set)
     scrollbar.pack(side="right", fill="y")
 
-    # Deshabilitar el redimensionamiento manual
+    # disable the resizing
     def fixed_column_width(event):
         for col, width in column_widths.items():
             tree.column(col, width=width)
@@ -131,7 +132,7 @@ def crear_treeview(parent, theme):
 
 def update_treeview(tree):
     # Leer el archivo JSON
-    file_path = Variables.rute_network_data
+    file_path = _Variables.rute_network_data
     try:
         with open(file_path, 'r') as file:
             data_dict = json.load(file)
@@ -149,7 +150,7 @@ def update_treeview(tree):
     # Variables para contar los puertos en estado LSN y EST
     count_lsn = 0
     count_est = 0
-    Variables.open_ports = 0
+    _Variables.open_ports = 0
 
     # Procesar los datos JSON para convertirlos en el formato requerido
     data = []
@@ -175,35 +176,35 @@ def update_treeview(tree):
     for item in data:
         tree.insert("", "end", values=item)
 
-    Variables.open_ports = count_est + count_lsn
+    _Variables.open_ports = count_est + count_lsn
 
     # Opcional: Forzar actualización de todos los widgets
     tree.update_idletasks()
 
 #STATUS TOP BAR#
 def create_stat_bar(frame):
-    theme = Variables.Actual_teme
+    theme = _Variables.Actual_teme
     # Crear el marco para la barra de estado
     stat_bar = tk.Frame(frame, bg=theme["bg_color"], height=20)
     stat_bar.pack(side='top', fill='x')
 
-    label1 = tk.Label(stat_bar, text=f"Open Ports: {Variables.open_ports}", bg=theme["bg_color"], fg=theme["fg_color"])
+    label1 = tk.Label(stat_bar, text=f"Open Ports: {_Variables.open_ports}", bg=theme["bg_color"], fg=theme["fg_color"])
     label1.pack(side='left', padx=5)
     
     return label1
 
-#Ejecutor funcion principal
+#main funtion show frame NetStat
 def Win_NetStat(frame, theme, *args):
-    Variables.Actual_teme = theme
+    _Variables.Actual_teme = theme
     gather_network_data()
         
     window_Netstat = tk.Frame(frame, bg=theme["bg_color"])
     window_Netstat.pack(side="top", fill="both", expand=True)
 
-    #crear treeview
+    #create treeview
     tree = crear_treeview(window_Netstat, theme)
-    label1 = create_stat_bar(frame) #barra inferior
-    update_periodically(tree, window_Netstat, theme, label1) #actualiza cada 10 segundos, barra inferior y treeview con datos
+    label1 = create_stat_bar(frame) #bottom bar
+    update_periodically(tree, window_Netstat, theme, label1) #every 10 secons update data on bottom bar and treeview data.
     
     return window_Netstat
 
@@ -249,13 +250,13 @@ def read_json_file(file_path):
 def assign_variables_from_json(data):
     for option in data.get("options", []):
         if "theme" in option:
-            Variables.theme = option["theme"]
+            _Variables.theme = option["theme"]
 
 #JSON LOCAL DATA NETSTAT SCAN
 def gather_network_data():
     # Diccionario para almacenar los datos
     network_data = {}
-    filename = Variables.rute_network_data
+    filename = _Variables.rute_network_data
     # Mapeo de estados a abreviaturas
     status_mapping = {
         "ESTABLISHED": "EST",

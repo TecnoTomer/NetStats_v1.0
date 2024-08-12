@@ -5,10 +5,10 @@ import sys
 import subprocess
 import time
 
-import Alerts
-import Variables
-import Buttons_Funtions
-import NetStat_Funtions
+import _Alerts
+import _Variables
+import _Buttons_Funtions
+import _NetStat_Funtions
 
 class AppController:
     def __init__(self, root):
@@ -30,13 +30,13 @@ class AppController:
 
     def load_saved_theme(self):
         # Leer el archivo JSON para obtener el tema
-        data = NetStat_Funtions.read_json_file(Variables.rute_data)
+        data = _NetStat_Funtions.read_json_file(_Variables.rute_data)
         # Asignar el tema guardado, por defecto 'light'
         theme_name = data.get("options", [{}])[0].get("theme", "light")
         # Establecer la variable global theme en Variables
-        Variables.theme = theme_name
+        _Variables.theme = theme_name
         # Devolver la configuración de tema apropiada
-        return Variables.dark_theme if theme_name == 'dark' else Variables.light_theme
+        return _Variables.dark_theme if theme_name == 'dark' else _Variables.light_theme
 
     def create_top_bar(self):
         top_bar = tk.Frame(self.root, bg=self.current_theme["bg_color"], height=20)
@@ -47,13 +47,13 @@ class AppController:
         button1 = tk.Button(
             top_bar, 
             text="Home", 
-            font=Variables.poppins,
+            font=_Variables.poppins,
             width=10, 
             bg=self.current_theme["bg_color"], 
             fg=self.current_theme["fg_color"],
             borderwidth=0,
             relief="flat",
-            command=lambda: Buttons_Funtions.B_Home(None, self)
+            command=lambda: _Buttons_Funtions.B_Home(None, self)
         )
         button1.pack(side="left")
         button1.bind("<Enter>", lambda e: self.on_enter(e))
@@ -63,7 +63,7 @@ class AppController:
         button2 = tk.Button(
             top_bar, 
             text="Track Ip", 
-            font=Variables.poppins,
+            font=_Variables.poppins,
             width=10, 
             bg=self.current_theme["bg_color"], 
             fg=self.current_theme["fg_color"],
@@ -78,7 +78,7 @@ class AppController:
         button3 = tk.Button(
             top_bar, 
             text="NetStat", 
-            font=Variables.poppins,
+            font=_Variables.poppins,
             width=10, 
             bg=self.current_theme["bg_color"], 
             fg=self.current_theme["fg_color"],
@@ -88,13 +88,13 @@ class AppController:
         button3.pack(side="left")
         button3.bind("<Enter>", lambda e: self.on_enter(e))
         button3.bind("<Leave>", lambda e: self.on_leave(e))
-        button3.bind("<Button-1>", lambda event: Buttons_Funtions.B_Netstat(event, self))
+        button3.bind("<Button-1>", lambda event: _Buttons_Funtions.B_Netstat(event, self))
 
         #Options
         button4 = tk.Button(
             top_bar, 
             text="Options", 
-            font=Variables.poppins,
+            font=_Variables.poppins,
             width=10, 
             bg=self.current_theme["bg_color"], 
             fg=self.current_theme["fg_color"],
@@ -104,13 +104,13 @@ class AppController:
         button4.pack(side="left")
         button4.bind("<Enter>", lambda e: self.on_enter(e))
         button4.bind("<Leave>", lambda e: self.on_leave(e))
-        button4.bind("<Button-1>", lambda event: Buttons_Funtions.B_Options(event, self))
+        button4.bind("<Button-1>", lambda event: _Buttons_Funtions.B_Options(event, self))
 
         #Help
         button5 = tk.Button(
             top_bar, 
             text="Help", 
-            font=Variables.poppins,
+            font=_Variables.poppins,
             width=10, 
             bg=self.current_theme["bg_color"], 
             fg=self.current_theme["fg_color"],
@@ -127,12 +127,12 @@ class AppController:
     def on_enter(self, event):
         widget = event.widget
         widget['bg'] = self.current_theme["on_enter"]
-        widget['font'] = Variables.poppins_negrita
+        widget['font'] = _Variables.poppins_negrita
 
     def on_leave(self, event):
         widget = event.widget
         widget['bg'] = self.current_theme["bg_color"]
-        widget['font'] = Variables.poppins
+        widget['font'] = _Variables.poppins
 
     def create_event(self, widget): #Función auxiliar para crear un evento simulado.
         class Event:
@@ -146,7 +146,7 @@ class AppController:
             if isinstance(widget, tk.Button):
                 # Aplicar efecto de `on_enter`
                 widget['bg'] = self.current_theme["on_enter"]
-                widget['font'] = Variables.poppins_negrita
+                widget['font'] = _Variables.poppins_negrita
 
                 # Restaurar a `on_leave` después de un corto tiempo
                 self.root.after(5, lambda w=widget: self.on_leave(self.create_event(w)))
@@ -163,15 +163,15 @@ class AppController:
 
     def switch_theme(self, theme):
         Alert_text = f"Para aplicar el tema {theme}, es necesario reiniciar el aplicativo"
-        answer = Alerts.alerta_aceptar(Variables.titulo, "¡Aviso!", Alert_text)
+        answer = _Alerts.alerta_aceptar(_Variables.titulo, "¡Aviso!", Alert_text)
         if answer == 1:
             # Cambiar el tema actual solo si es diferente al tema guardado
-            if theme == 'dark' and Variables.theme == 'light':
-                self.current_theme = Variables.dark_theme
-                Variables.theme = 'dark'
-            elif theme == 'light' and Variables.theme == 'dark':
-                self.current_theme = Variables.light_theme
-                Variables.theme = 'light'
+            if theme == 'dark' and _Variables.theme == 'light':
+                self.current_theme = _Variables.dark_theme
+                _Variables.theme = 'dark'
+            elif theme == 'light' and _Variables.theme == 'dark':
+                self.current_theme = _Variables.light_theme
+                _Variables.theme = 'light'
             else:
                 return
             
@@ -230,13 +230,13 @@ class AppController:
 
     def save_current_theme(self, theme):
         # Leer los datos actuales
-        data = NetStat_Funtions.read_json_file(Variables.rute_data)
+        data = _NetStat_Funtions.read_json_file(_Variables.rute_data)
         # Actualizar o añadir el tema
         if not data.get("options"):
             data["options"] = [{}]
         data["options"][0]["theme"] = theme
         # Escribir los datos actualizados al archivo
-        with open(Variables.rute_data, 'w') as file:
+        with open(_Variables.rute_data, 'w') as file:
             json.dump(data, file, indent=4)
 
 def reiniciar_aplicacion():
@@ -255,37 +255,37 @@ def Win_p(frame, theme):
     return window_p
 
 def main():
-    NetStat_Funtions.update_json_with_option(Variables.rute_data, "", "")
+    _NetStat_Funtions.update_json_with_option(_Variables.rute_data, "", "")
     #size window_root
     ancho = 500
     alto = 650
 
-    Variables.window_root.title(Variables.titulo) #Titulo
-    Variables.window_root.geometry(f"{ancho}x{alto}")
+    _Variables.window_root.title(_Variables.titulo) #Titulo
+    _Variables.window_root.geometry(f"{ancho}x{alto}")
 
     #screen width & heigth
-    pantalla_ancho = Variables.window_root.winfo_screenwidth()
-    pantalla_alto = Variables.window_root.winfo_screenheight()
+    pantalla_ancho = _Variables.window_root.winfo_screenwidth()
+    pantalla_alto = _Variables.window_root.winfo_screenheight()
 
     #position to center window_root
     x = (pantalla_ancho - ancho) // 2
     y = (pantalla_alto - alto) // 2
 
     #block size
-    Variables.window_root.resizable(False, False)
+    _Variables.window_root.resizable(False, False)
 
     #center the windows_root
-    Variables.window_root.geometry(f"{ancho}x{alto}+{x}+{y}")
+    _Variables.window_root.geometry(f"{ancho}x{alto}+{x}+{y}")
 
     #windows_root icon
-    Variables.window_root.iconbitmap(Variables.icono)
+    _Variables.window_root.iconbitmap(_Variables.icono)
 
     # Crear el controlador de la aplicación
-    app_controller = AppController(Variables.window_root)
+    app_controller = AppController(_Variables.window_root)
     #app_controller.cambio_ventana(Win_p, )
     app_controller.cambio_ventana(lambda frame: Win_p(frame, app_controller.current_theme))
 
-    Variables.window_root.mainloop()
+    _Variables.window_root.mainloop()
 
 if __name__ == "__main__":
     main()

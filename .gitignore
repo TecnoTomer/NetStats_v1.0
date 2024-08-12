@@ -1,6 +1,10 @@
 # Byte-compiled / optimized / DLL files
+
 DOCS/DATA .ZIP/
+lib/resources/db/
+lib/resources/data
 stat_script/
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -16,7 +20,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+#lib/
 lib64/
 parts/
 sdist/
