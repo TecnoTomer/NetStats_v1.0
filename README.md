@@ -3,9 +3,13 @@ Bienvenido a la documentación de **NetStats_v1.0**. Este proyecto tiene como ob
 
 ---
 
-  ![Vista Previa](https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/logo.png)
+<p align="center">
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/logo.png" alt="Vista Previa" width="350"/>
+</p>
 
-  ![Vista Previa](https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/background.png)
+<p align="center">
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/background.png" alt="Vista Previa" width="300"/>
+</p>
 
 ---
 
@@ -73,7 +77,7 @@ Estamos trabajando en nuevas características para mejorar la funcionalidad y la
 ## 🙏 **Créditos**
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/iplocation.png" alt="Vista Previa" width="600"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/iplocation.png" alt="Vista Previa" width="250"/>
 </p>
 
 Este proyecto utiliza bases de datos y servicios de [IP2Location](https://www.ip2location.io/). Gracias a su herramienta y recursos, es posible obtener información detallada sobre las direcciones IP, incluyendo ubicación geográfica, ISP, y más.
