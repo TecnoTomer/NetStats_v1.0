@@ -12,14 +12,12 @@ Bienvenido a la documentación de **NetStats_v1.0**. Este proyecto tiene como ob
 
 ## 🚀 **Características Actuales**
 
-
 ### 🏠 **HOME**
 La sección **HOME** actualmente muestra una imagen de presentación. Aunque no tiene funcionalidades adicionales en este momento, es el punto de partida de tu aplicación.
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/track_ip.png" alt="Vista Previa 1" width="500"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/home.png" alt="Vista Previa 1" width="550"/>
 </p>
-
 
 ### 🌐 **TRACK IP / RASTREO IP**
 Esta función es el corazón de la aplicación. Permite rastrear direcciones IP remotas y visualizar cada salto hasta el destino. Aquí está la información detallada que se proporciona para cada IP en el recorrido:

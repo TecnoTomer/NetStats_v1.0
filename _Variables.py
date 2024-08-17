@@ -36,7 +36,12 @@ light_theme = {
     "search_entry": "lib/resources/icons/ui/bar_search_light.png",
     "bt_start_normal_image": "lib/resources/icons/ui/start_light_normal.png", 
     "bt_start_select_image": "lib/resources/icons/ui/start_light_select.png",
-    "entry": "#BFBFBF"
+    "entry": "#BFBFBF",
+
+    #Home page images
+    "Background": "lib/resources/icons/ui/map_light1.png",
+    "logotipe": "lib/resources/icons/ui/logo.png",
+    "IpLocation": "lib/resources/icons/ui/IpLocation.png"
 
 }
 
@@ -59,7 +64,13 @@ dark_theme = {
     "search_entry": "lib/resources/icons/ui/bar_search_dark.png",
     "bt_start_normal_image": "lib/resources/icons/ui/start_dark_normal.png",
     "bt_start_select_image": "lib/resources/icons/ui/start_dark_select.png",
-    "entry": "#080B1E"
+    "entry": "#080B1E",
+
+    #Home page images
+    "Background": "lib/resources/icons/ui/map_dark1.png",
+    "logotipe": "lib/resources/icons/ui/logo.png",
+    "IpLocation": "lib/resources/icons/ui/IpLocation.png"
+
 }
 
 current_language = "en"

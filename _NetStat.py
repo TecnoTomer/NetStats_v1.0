@@ -299,6 +299,29 @@ def reiniciar_aplicacion():
 def Win_p(frame, theme):
     window_p = tk.Frame(frame, bg=theme["bg_color"])
     window_p.pack(side="top", fill="both", expand=True)
+
+    #logotipe img
+    logo_img = Image.open(theme["logotipe"])
+    logo_img = logo_img.resize((150, 150))
+    img_logo = ImageTk.PhotoImage(logo_img)
+    logo_img = tk.Label(window_p, image=img_logo, bg=theme["bg_color"])
+    logo_img.place(x=170, y=5)
+    logo_img.image = img_logo    
+    #iplocation img
+    Iplocation_img = Image.open(theme["IpLocation"])
+    Iplocation_img = Iplocation_img.resize((300, 80))
+    img_iplocation = ImageTk.PhotoImage(Iplocation_img)
+    Iplocation_img = tk.Label(window_p, image=img_iplocation, bg=theme["bg_color"])
+    Iplocation_img.place(x=110, y=520)
+    Iplocation_img.image = img_iplocation
+    #back img
+    background_img = Image.open(theme["Background"])
+    background_img = background_img.resize((500, 350))
+    img_back = ImageTk.PhotoImage(background_img)
+    background_img = tk.Label(window_p, image=img_back, bg=theme["bg_color"])
+    background_img.place(x=0, y=150)
+    background_img.image = img_back
+
     return window_p
 
 def main():
