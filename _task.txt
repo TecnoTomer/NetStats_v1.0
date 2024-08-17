@@ -15,20 +15,6 @@ dar funcionabilidad a:
 - cuando de click en el boton start, boora todo lo del subframe window_TrackIp, y crea un nuevo sub frame con una ventana de carga con el logo grande dando vueltas, mientras hace el proceso de hacer el tracer sobre la ip y guarda esos resultados, para luego a esos resultados tambien hacerle tracer a cada ip publica de cada salto, guardar la informacion comleta en otro archivo json bien estructurada, para luego comparar los resultados y hacerlos coincidir con las databses de los sitios y luego crear su ubicacion en el mapa que las ubicaciones salgan tipo fecla y una linea de trazado de un salto a otro.
 
 
-#
-estoy en proceso de crear el read me de mi proyecto para subir los avances a github!
+#readme
 
-hasta el momento el programa tiene estas funciones:
-
-- HOME: #actualmenete solo muestra suna imagen de presentacion nada importante.
-- TRACK IP / RASTREO IP: #funcion para hacer rastreros de direciones ip, esta funcion escanea un direcion ip remota, y cada uno de los saltos que hace hasta llegar a su destino, luego cada una de esas ip incluyendo la inicial de donde sale la conexion hasta donde llega, le va a sacar informacion muy importante como, IP ADDRESS, COUNTRY, REGION, CITY, COORDINATES, ISP, TIME ZONE, LOCAL TIME, DOMAIN, NET SPPED, IDD & AREA CODE, ZIP CODE, WEATHER STATION, MOBILE CARRIES, MOBILE COUNTRY CODE, MOBILE NETWORK CODE, ELEVATION, ASN. IS PROXY, PROXY TYPE, PROXY ANS, SECURITY THREAR, PROXY LAST SEEN, PROZY PROVIDER, y Identificación del Nodo, tambien luego muestra esta informacion organizada para cada una de las ip remotas o saltos y luego al final muestra en un mapa las rutas y ubicaciones.
-- SERVICIOS NETSTATS: esta funcion, mescanea y muestra informacion sobre los servicios actualmente corriendo el sistema, sirve para ver que conexiones y puertos tenemos abiertos y asi saber si alguien nos esta hackeando y se envia informacion a algun servidor etc, tiene las siguientes opciones para cada servicio, muestra una ventana con la siguiente informacion de cada servicio, Port, Pid, Local IP, Remote IP, Service, Status:
-    - Reboot
-    - Details
-    - Kill Task
-    - Properties"
-    - Search Online
-    - Show in Folder
-
-cada una pues describele la utilidad.
-
+organizar el home para subir las nuevas fotos bien bonitas y demas cositas en cada funciones o caracteristicas

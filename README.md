@@ -16,8 +16,18 @@ Bienvenido a la documentación de **NetStats_v1.0**. Este proyecto tiene como ob
 ### 🏠 **HOME**
 La sección **HOME** actualmente muestra una imagen de presentación. Aunque no tiene funcionalidades adicionales en este momento, es el punto de partida de tu aplicación.
 
+<p align="center">
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/track_ip.png" alt="Vista Previa 1" width="250"/>
+</p>
+
+
 ### 🌐 **TRACK IP / RASTREO IP**
 Esta función es el corazón de la aplicación. Permite rastrear direcciones IP remotas y visualizar cada salto hasta el destino. Aquí está la información detallada que se proporciona para cada IP en el recorrido:
+
+<p align="center">
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/track_ip.png" alt="Vista Previa 1" width="250"/>
+</p>
+
 - **IP ADDRESS**: La dirección IP.
 - **COUNTRY**: País del nodo.
 - **REGION**: Región del nodo.
@@ -48,6 +58,11 @@ Después de mostrar esta información, se organiza en una vista comprensible y s
 
 ### 🔍 **SERVICIOS NETSTATS**
 Esta función escanea y muestra información sobre los servicios activos en el sistema. Es útil para identificar conexiones y puertos abiertos, ayudando a detectar posibles amenazas de seguridad. Las opciones para cada servicio incluyen:
+
+<p align="center">
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/net_stats_options.png" alt="Vista Previa 1" width="250"/>
+</p>
+
 - **Reboot**: Reiniciar el servicio.
 - **Details**: Ver detalles del servicio.
 - **Kill Task**: Finalizar la tarea del servicio.
