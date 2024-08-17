@@ -88,7 +88,7 @@ Estamos trabajando en nuevas características para mejorar la funcionalidad y la
 ## 🙏 **Créditos**
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/IpLocation2.png" alt="Vista Previa" width="180"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/IpLocation2.png" alt="Vista Previa" width="250"/>
 </p>
 
 Este proyecto utiliza bases de datos y servicios de [IP2Location](https://www.ip2location.io/). Gracias a su herramienta y recursos, es posible obtener información detallada sobre las direcciones IP, incluyendo ubicación geográfica, ISP, y más.
