@@ -1,11 +1,12 @@
 import sys
 from cx_Freeze import setup, Executable
+import _Variables
 
 build_exe_options = {
     "packages": ["tkinter"],
     "includes": [
         "tkinter", "json", "os", "sys", "subprocess", 
-        "time", "ctypes", "psutil"
+        "time", "ctypes", "psutil", "win32serviceutil", "importlib", "threading"
     ],
     "include_files": [
         ("lib/resources", "lib/resources")
@@ -13,7 +14,7 @@ build_exe_options = {
 }
 
 executables = [
-    Executable("NetStat.py", base=None, icon="lib/resources/icons/icono.ico")
+    Executable("_NetStat.py", base=None, target_name="tu_aplicacion.exe", icon=_Variables.icono_bar)
 ]
 
 setup(
