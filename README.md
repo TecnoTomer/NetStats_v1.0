@@ -4,11 +4,8 @@ Bienvenido a la documentación de **NetStats_v1.0**. Este proyecto tiene como ob
 ---
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/logo.png" alt="Vista Previa" width="350"/>
-</p>
-
-<p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/background.png" alt="Vista Previa" width="300"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/logo.png" alt="Vista Previa 1" width="250"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/background.png" alt="Vista Previa 2" width="250"/>
 </p>
 
 ---
