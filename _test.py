@@ -62,4 +62,4 @@ def open_properties(file_path):
 
 # Ejemplo de uso
 open_properties("C:\\ruta\\al\\archivo.txt")
-"""
+
