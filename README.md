@@ -16,14 +16,14 @@ Bienvenido a la documentación de **NetStats_v1.0**. Este proyecto tiene como ob
 La sección **HOME** actualmente muestra una imagen de presentación. Aunque no tiene funcionalidades adicionales en este momento, es el punto de partida de tu aplicación.
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/home.png" alt="Vista Previa 1" width="550"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/home.png" alt="Vista Previa 1" width="600"/>
 </p>
 
 ### 🌐 **TRACK IP / RASTREO IP**
 Esta función es el corazón de la aplicación. Permite rastrear direcciones IP remotas y visualizar cada salto hasta el destino. Aquí está la información detallada que se proporciona para cada IP en el recorrido:
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/track_ip.png" alt="Vista Previa 1" width="500"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/track_ip.png" alt="Vista Previa 1" width="600"/>
 </p>
 
 - **IP ADDRESS**: La dirección IP.
@@ -58,7 +58,7 @@ Después de mostrar esta información, se organiza en una vista comprensible y s
 Esta función escanea y muestra información sobre los servicios activos en el sistema. Es útil para identificar conexiones y puertos abiertos, ayudando a detectar posibles amenazas de seguridad. Las opciones para cada servicio incluyen:
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/net_stats_options.png" alt="Vista Previa 1" width="500"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/net_stats_options.png" alt="Vista Previa 1" width="600"/>
 </p>
 
 - **Reboot**: Reiniciar el servicio.
@@ -87,7 +87,7 @@ Estamos trabajando en nuevas características para mejorar la funcionalidad y la
 ## 🙏 **Créditos**
 
 <p align="center">
-  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/iplocation.png" alt="Vista Previa" width="250"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/iplocation.png" alt="Vista Previa" width="180"/>
 </p>
 
 Este proyecto utiliza bases de datos y servicios de [IP2Location](https://www.ip2location.io/). Gracias a su herramienta y recursos, es posible obtener información detallada sobre las direcciones IP, incluyendo ubicación geográfica, ISP, y más.
