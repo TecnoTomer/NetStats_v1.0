@@ -1,16 +1,20 @@
 import tkinter as tk
+import webbrowser
+import re
 
 import _Variables
+import _Alerts
 import _NetStat
 import _NetStat_Funtions
-from _TrackIp_Funtions import Win_TrackIp
+import _TrackIp_Funtions
 
 #top bar buttons
 def B_Home(event, controller):
     controller.cambio_ventana(lambda frame: _NetStat.Win_p(frame, controller.current_theme))
 
 def B_TrackIp(event, controller):
-    controller.cambio_ventana(lambda frame: Win_TrackIp(frame, controller.current_theme))
+    _Variables.app_controller = controller
+    controller.cambio_ventana(lambda frame: _TrackIp_Funtions.Win_TrackIp(frame, controller.current_theme))
 
 def B_Netstat(event, controller):
     controller.cambio_ventana(lambda frame: _NetStat_Funtions.Win_NetStat(frame, controller.current_theme))
@@ -67,15 +71,27 @@ def B_details(event):
     
     _NetStat_Funtions.row_click(event, _text, _Variables.inicial_theme)
 
+#_netStat buttons
+def open_url(self):
+    webbrowser.open(self)
 
 #TRACK_IP BUTTONS#
-#
-def start_button(search_entry):
-    if search_entry:
-        data = search_entry.get()
-        print(f"datos de entry: {data}")
+#start tracking ip
+def validar_ipv4(direccion):
+    ipv4_regex = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    return re.match(ipv4_regex, direccion) is not None
+
+def start_button(event, value_entry):
+    data = value_entry.get()
+    if data:
+        if validar_ipv4(data):
+            _Variables.app_controller.cambio_ventana(lambda frame: _TrackIp_Funtions.loading(frame, data))
+        else:
+            text = _Variables.languages[_Variables.current_language]["entry_empty"]
+            _Alerts.alerta_ok(_Variables.titulo, "!Aviso¡", text)
     else:
-        print("vacido")
+        text = _Variables.languages[_Variables.current_language]["entry_empty"]
+        _Alerts.alerta_ok(_Variables.titulo, "!Aviso¡", text)
 
 #Label buttons styles
 def on_enter(event, label, hover_image):

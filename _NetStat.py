@@ -301,19 +301,22 @@ def Win_p(frame, theme):
     window_p.pack(side="top", fill="both", expand=True)
 
     #logotipe img
-    logo_img = Image.open(theme["logotipe"])
+    logo_img = Image.open(theme["logotipe_normal"])
     logo_img = logo_img.resize((150, 150))
     img_logo = ImageTk.PhotoImage(logo_img)
+    #logo hover
+    logo_hover = Image.open(theme["logotipe_hover"])
+    logo_hover = logo_hover.resize((150, 150))
+    img_logo_hover = ImageTk.PhotoImage(logo_hover)
+
     logo_img = tk.Label(window_p, image=img_logo, bg=theme["bg_color"])
     logo_img.place(x=170, y=5)
-    logo_img.image = img_logo    
-    #iplocation img
-    Iplocation_img = Image.open(theme["IpLocation"])
-    Iplocation_img = Iplocation_img.resize((300, 80))
-    img_iplocation = ImageTk.PhotoImage(Iplocation_img)
-    Iplocation_img = tk.Label(window_p, image=img_iplocation, bg=theme["bg_color"])
-    Iplocation_img.place(x=110, y=520)
-    Iplocation_img.image = img_iplocation
+    logo_img.image = img_logo
+
+    logo_img.bind("<Enter>", lambda event: _Buttons_Funtions.on_enter(event, logo_img, img_logo_hover))
+    logo_img.bind("<Leave>", lambda event: _Buttons_Funtions.on_leave(event, logo_img, img_logo))
+    logo_img.bind("<Button-1>", lambda event: _Buttons_Funtions.open_url(_Variables.github_acc))
+
     #back img
     background_img = Image.open(theme["Background"])
     background_img = background_img.resize((500, 350))
@@ -321,6 +324,24 @@ def Win_p(frame, theme):
     background_img = tk.Label(window_p, image=img_back, bg=theme["bg_color"])
     background_img.place(x=0, y=150)
     background_img.image = img_back
+
+    #iplocation img
+    #normal image
+    Iplocation_img = Image.open(theme["IpLocation_normal"])
+    Iplocation_img = Iplocation_img.resize((300, 80))
+    img_iplocation = ImageTk.PhotoImage(Iplocation_img)
+    #hover image
+    Iplocation_hover = Image.open(theme["IpLocation_hover"])
+    Iplocation_hover = Iplocation_hover.resize((300, 80))
+    img_iplocation_hover = ImageTk.PhotoImage(Iplocation_hover)
+
+    Iplocation_img = tk.Label(window_p, image=img_iplocation, bg=theme["bg_color"])
+    Iplocation_img.place(x=110, y=520)
+    Iplocation_img.image = img_iplocation
+
+    Iplocation_img.bind("<Enter>", lambda event: _Buttons_Funtions.on_enter(event, Iplocation_img, img_iplocation_hover))
+    Iplocation_img.bind("<Leave>", lambda event: _Buttons_Funtions.on_leave(event, Iplocation_img, img_iplocation))
+    Iplocation_img.bind("<Button-1>", lambda event: _Buttons_Funtions.open_url(_Variables.Ip2Location_url))
 
     return window_p
 

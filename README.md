@@ -101,7 +101,7 @@ Si estás interesado en servicios de geolocalización IP, te recomiendo visitar 
 
 ## 📄 **Licencia**
 
-Este proyecto está bajo la Licencia **Mozilla Public License Version 2.0**. Consulta el archivo **`LICENSE`** para más detalles.
+Este proyecto está bajo la Licencia **`Mozilla Public License Version 2.0`**. Consulta el archivo **`LICENSE`** para más detalles.
 
 ---
 

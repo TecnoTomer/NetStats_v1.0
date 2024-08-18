@@ -6,7 +6,8 @@ build_exe_options = {
     "packages": ["tkinter"],
     "includes": [
         "tkinter", "json", "os", "sys", "subprocess", 
-        "time", "ctypes", "psutil", "win32serviceutil", "importlib", "threading"
+        "time", "ctypes", "psutil", "win32serviceutil", "importlib", "threading",
+        "folium", "webview", "re", "random", "ping3", "requests"
     ],
     "include_files": [
         ("lib/resources", "lib/resources")
