@@ -57,6 +57,8 @@ Después de mostrar esta información, se organiza en una vista comprensible y s
 
 <p align="center">
   <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/tracking.png" alt="Vista Previa 1" width="600"/>
+</p>
+<p align="center">
   <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/TrackIP_map.png" alt="Vista Previa 1" width="600"/>
 </p>
 
