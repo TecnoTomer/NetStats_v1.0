@@ -119,7 +119,7 @@ Gracias por tu interés en **NetStats_v1.0**. ¡Esperamos que encuentres útil n
 ## 📄 **Descargar**
 ---
 
-[![Descargar NetStats_v1.0](https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/OneDrive.png)](URL_DE_DESCARGA)
+[![Descargar NetStats_v1.0](https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/OneDrive.png)](https://soysena-my.sharepoint.com/:u:/g/personal/ermenson_granda0_soy_sena_edu_co/ESeqtEFYzY9DpT6-mxPzIOUBsf6W7ipj2VkQoHVl5A0yuA?e=dTP2gG)
 
 ---
 

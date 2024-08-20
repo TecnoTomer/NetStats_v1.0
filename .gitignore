@@ -6,6 +6,7 @@ lib/resources/db/
 lib/resources/data/
 build/
 build4/
+build_good/
 stat_script/
 
 __pycache__/
