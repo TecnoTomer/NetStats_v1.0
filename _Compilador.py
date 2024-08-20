@@ -35,7 +35,7 @@ build_exe_options = {
 }
 
 executables = [
-    Executable("_NetStat.py", base=None, target_name="tu_aplicacion.exe", icon=_Variables.icono_exe)
+    Executable("_NetStat.py", base=None, target_name="NetStatus_v1.0.exe", icon=_Variables.icono_exe)
 ]
 
 setup(
