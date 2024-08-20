@@ -39,29 +39,22 @@ def rotate_image():
     global angle
     global stop_flag
 
-    # Verifica si la rotación debe detenerse
     if stop_flag:
         return
 
-    # Incrementa el ángulo de rotación
-    angle = (angle + 10) % 360  # Ajusta el valor 10 para cambiar el ángulo de rotación por iteración
+    angle = (angle + 10) % 360
     
-    # Rota la imagen original sin expandirla
     rotated_img = Loading_img.rotate(angle, resample=Image.BICUBIC, expand=False)
     
-    # Mantener el tamaño de la imagen original y centrarla
     width, height = rotated_img.size
     centered_img = Image.new("RGBA", (150, 150), (255, 255, 255, 0))
     centered_img.paste(rotated_img, ((150 - width) // 2, (150 - height) // 2))
 
-    # Crear la imagen para Tkinter
     img = ImageTk.PhotoImage(centered_img)
     
-    # Actualiza la etiqueta con la imagen rotada
     Loading_img_label.config(image=img)
     Loading_img_label.image = img
     
-    # Llama a la función nuevamente después de `rotation_speed` milisegundos
     Loading_img_label.after(rotation_speed, rotate_image)
 
 def start_rotation():
@@ -166,15 +159,12 @@ def search_track_page(frame):
 
     return search_page
 
-# Ejemplo de función para actualizar la interfaz de usuario
 def update_ui_track(message):
-    # Este es un ejemplo de cómo podrías actualizar la interfaz de usuario
-    # Puedes ajustar esto según cómo quieras mostrar los mensajes
     if 'text_widget' in globals():
         text_widget.insert(tk.END, message + '\n')
         text_widget.see(tk.END)
 
-def obtener_tracert(dominio, archivo_salida): #workin
+def obtener_tracert(dominio, archivo_salida): #working
     def worker():
         update_ui_track("Step #1")
         _Variables.ip_insert_entry = dominio
@@ -197,7 +187,6 @@ def obtener_tracert(dominio, archivo_salida): #workin
                 update_ui_track(resultado.stderr)
                 return
 
-            # Guardar la salida completa en un archivo
             with open(archivo_salida, 'w') as archivo:
                 archivo.write(resultado.stdout)
                 update_ui_track(_Variables.languages[_Variables.current_language]["task_complete"])
@@ -217,9 +206,7 @@ def obtener_tracert(dominio, archivo_salida): #workin
         with open(archivo_salida, 'r') as archivo:
             lineas = archivo.readlines()
 
-            # Procesar cada línea a partir de la quinta línea
             for linea in lineas[4:]:
-                # Saltar los primeros 32 caracteres de cada línea y buscar coincidencias
                 parte_relevante = linea[32:].strip()
                 match = patron_ip.search(parte_relevante)
                 if match:
@@ -228,8 +215,7 @@ def obtener_tracert(dominio, archivo_salida): #workin
         for i in _Variables.alL_hops:#imprimera los saltos
             update_ui_track(i)
             time.sleep(n)
-        
-        # Convertir la lista 'resultados' en una cadena con saltos de línea
+       
         with open(archivo_salida, "w") as archivo:
             archivo.write("\n".join(_Variables.alL_hops))
             time.sleep(n)
@@ -243,7 +229,6 @@ def obtener_tracert(dominio, archivo_salida): #workin
         # Lista de IPs y nodos a procesar
         ips = _Variables.alL_hops  # Reemplaza esto con la lista de IPs y nodos
 
-        # Diccionario para almacenar la información de cada IP
         datos_ips = {}
 
         for entrada in ips:
@@ -251,7 +236,6 @@ def obtener_tracert(dominio, archivo_salida): #workin
             nodo = None
             ip = None
 
-            # Verificar si el formato es "nodo [ip]"
             if '[' in entrada and ']' in entrada:
                 nodo, ip = entrada.split('[')
                 nodo = nodo.strip()
@@ -261,7 +245,7 @@ def obtener_tracert(dominio, archivo_salida): #workin
 
             # Parámetros para la solicitud a la API
             payload = {
-                'key': 'C87980CFD102895533EA9C272B7237A1',  # Reemplaza con tu clave API válida
+                'key':'key',  # Reemplaza con tu clave API válida
                 'ip': ip,
                 'format': 'json'
             }
