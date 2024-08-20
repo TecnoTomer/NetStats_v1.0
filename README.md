@@ -119,6 +119,7 @@ Gracias por tu interés en **NetStats_v1.0**. ¡Esperamos que encuentres útil n
 ## 📄 **Descargar**
 ---
 
-[![Descargar NetStats_v1.0](https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.m.wikipedia.org%2Fwiki%2FArchivo%3AOneDrive_logo_and_wordmark.svg&psig=AOvVaw0vHFZbCfI67plk77uY9GL8&ust=1724205772078000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjqkpW9gogDFQAAAAAdAAAAABAE)](URL_DE_DESCARGA)
+[![Descargar NetStats_v1.0](https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/OneDrive.PNG)](URL_DE_DESCARGA)
 
 ---
+
