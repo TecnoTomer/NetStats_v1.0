@@ -115,3 +115,10 @@ Este proyecto está bajo la Licencia **`Mozilla Public License Version 2.0`**. C
 Gracias por tu interés en **NetStats_v1.0**. ¡Esperamos que encuentres útil nuestra herramienta!
 
 ---
+
+## 📄 **Descargar**
+---
+
+[![Descargar NetStats_v1.0](https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.m.wikipedia.org%2Fwiki%2FArchivo%3AOneDrive_logo_and_wordmark.svg&psig=AOvVaw0vHFZbCfI67plk77uY9GL8&ust=1724205772078000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjqkpW9gogDFQAAAAAdAAAAABAE)](URL_DE_DESCARGA)
+
+---
