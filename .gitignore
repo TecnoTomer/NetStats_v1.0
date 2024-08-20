@@ -4,6 +4,8 @@ documents/db.zip/
 documents/develop gui/ejemplo show inf.PNG
 lib/resources/db/
 lib/resources/data/
+build2/
+build/
 stat_script/
 
 __pycache__/

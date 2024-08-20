@@ -7,7 +7,7 @@ import os
 window_root = tk.Tk()
 titulo = "NetStatus_v1.0"
 icono_bar = 'lib/resources/icons/Imagen1.png'
-
+icono_exe = 'lib/resources/icons/icono.ico'
 #ROW VALUES
 _port = ""
 _pid = ""
