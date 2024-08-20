@@ -5,9 +5,29 @@ import _Variables
 build_exe_options = {
     "packages": ["tkinter"],
     "includes": [
-        "tkinter", "json", "os", "sys", "subprocess", 
-        "time", "ctypes", "psutil", "win32serviceutil", "importlib", "threading",
-        "folium", "webview", "re", "random", "ping3", "requests"
+        "json",
+        "os",
+        "sys",
+        "subprocess",
+        "time",
+        "tkinter",
+        "psutil",
+        "importlib",
+        "win32serviceutil",
+        "threading",
+        "PIL",  # PIL es un módulo, aunque las clases 'Image' y 'ImageTk' son parte de este módulo.
+        "folium",
+        "webview",
+        "re",
+        "random",
+        "ping3",
+        "requests",
+        "csv",
+        "ipaddress",
+        "shutil",
+        "tempfile",
+        "webbrowser",
+        "ctypes"
     ],
     "include_files": [
         ("lib/resources", "lib/resources")

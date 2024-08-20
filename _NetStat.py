@@ -135,6 +135,7 @@ class AppController:
         button5.pack(side="left")
         button5.bind("<Enter>", lambda e: self.on_enter(e))
         button5.bind("<Leave>", lambda e: self.on_leave(e))
+        button5.bind("<Button-1>", lambda event: help_b())
 
         return top_bar
 
@@ -295,6 +296,9 @@ def reiniciar_aplicacion():
     subprocess.Popen([python] + sys.argv)
     # Cierra la instancia actual
     sys.exit()
+
+def help_b():
+    _Alerts.alerta_ok(_Variables.titulo, "Contacto", "Para informacion o reportar bug contacte por Email a notificaciones.netaplication@gmail.com")
 
 def Win_p(frame, theme):
     window_p = tk.Frame(frame, bg=theme["bg_color"])

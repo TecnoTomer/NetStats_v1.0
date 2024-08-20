@@ -1,6 +1,7 @@
 #WINDOWS#
 import tkinter as tk
 from tkinter import font
+import os
 
 #root
 window_root = tk.Tk()
@@ -49,6 +50,11 @@ colum_text_inf_es = (
 #OTHERS#
 current_tooltip = None
 
+#DELETE ANY FILE#
+def eliminar_archivo(ruta_archivo):
+    if os.path.exists(ruta_archivo):
+        os.remove(ruta_archivo)
+
 #FONT#
 def load_custom_font():
     ruta_fuente = "lib/resources/font/poppins.ttf"
@@ -75,8 +81,16 @@ open_ports = 0
 
 #TRACK IP data:
 tracker_ip_output = "lib/resources/data/tracert_output.txt"
-IPlocation_basic_data = "lib/resources/data/IpLocationBasic_data.json"
-map_location = "lib/resources/location/map.html"
+IPlocation_basic_data = "lib/resources/data/Location_data.json"
+#db for filters
+country_code = ""
+city_name = ""
+asn = ""
+db_asn = 'lib/Resources/db/1_Ans.csv'
+db_proxy =  'lib/resources/db/2_Proxy.csv'
+
+#index_location = "lib/resources/location/home.html"
+map_location = "lib/resources/locat/map.html"
 global_ruta = ""
 ip_insert_entry = ""
 alL_hops = []
@@ -208,10 +222,9 @@ languages = {
         "Error": "Error: ",
         "task_complete": "it has been successfully...",
         "clean": "Generating and saving data...",
-        "checkBox_one": "ONLY THIS",
-        "checkBox_all": "ALL HOPS",
         #_TrackIp_Functions/obtener_tracert/guardar_datos_ip_en_json
-        "resques_iploction": "IP Discover "
+        "resques_iploction": "IP Discover ",
+        "end": "Tasks completed correctly to see the results press the button"
     },
     "es": {
         "Home": "Inicio",
@@ -265,9 +278,8 @@ languages = {
         "Error": "Error: ",
         "task_complete": "Se completo correctamente...",
         "clean": "\nGenerando y guardando datos...\n",
-        "checkBox_one": "SOLO ESTE",
-        "checkBox_all": "TODOS LOS SALTOS",
         #_TrackIp_Functions/obtener_tracert/guardar_datos_ip_en_json
-        "resques_iploction": "Procesando IP "
+        "resques_iploction": "Procesando IP ",
+        "end": "Tareas completadas correctamente para ver los resultados presiona el botón"
     }
 }

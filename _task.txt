@@ -10,7 +10,9 @@ dar funcionabilidad a:
 
     esta en _NetStat_funtions
 
-#TRACK IP TASK
+filtrr por asn de iploctionbsick_dta.json, que cree el rchivo, luego filtrar por la ip mas cercana scar:
+"Rango IP (CIDR)": "200.24.32.0/19".
+
 - y saque toda la informaxcion de todos los hops, hora comprbar parte de esas variables con los archivos cvs pasando varibles a los otros script de #stat_script e ir biendo que informacion sacar y mostar que coincida, luego con las coordenadas guardarlas para mostrarlas en mapa
 
 - luego presentar esa informacion: para presentar la inormacion cuando termine de recopilarla en orden en un archivo, habrir un nueva ventana, dividid en dos.
@@ -19,3 +21,9 @@ dar funcionabilidad a:
 
 
 - cuando de click en el boton start, boora todo lo del subframe window_TrackIp, y crea un nuevo sub frame con una ventana de carga con el logo grande dando vueltas, mientras hace el proceso de hacer el tracer sobre la ip y guarda esos resultados, para luego a esos resultados tambien hacerle tracer a cada ip publica de cada salto, guardar la informacion comleta en otro archivo json bien estructurada, para luego comparar los resultados y hacerlos coincidir con las databses de los sitios y luego crear su ubicacion en el mapa que las ubicaciones salgan tipo fecla y una linea de trazado de un salto a otro.
+
+
+
+
+ok!
+

@@ -55,6 +55,11 @@ Esta función es el corazón de la aplicación. Permite rastrear direcciones IP 
 
 Después de mostrar esta información, se organiza en una vista comprensible y se representa en un mapa, visualizando las rutas y ubicaciones de los saltos.
 
+<p align="center">
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/tracking.png" alt="Vista Previa 1" width="600"/>
+  <img src="https://github.com/TecnoTomer/NetStats_v1.0/blob/main/documents/develop%20gui/intro-frames/TrackIP_map.png" alt="Vista Previa 1" width="600"/>
+</p>
+
 ### 🔍 **SERVICIOS NETSTATS**
 Esta función escanea y muestra información sobre los servicios activos en el sistema. Es útil para identificar conexiones y puertos abiertos, ayudando a detectar posibles amenazas de seguridad. Las opciones para cada servicio incluyen:
 
